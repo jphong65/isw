@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+		<!--  -->
+	<!-- Property Files -->
+	<!--  -->
+	<bean id="systemProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="location" value="classpath:/system.properties"/>
+	</bean>
+	<util:properties id="props" location="classpath:/system.properties" />
+	
+
+	<!--  -->
+    <!-- mybatis -->
+	<!--  -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
+        <!-- mybatis mapper auto load -->
+        <property name="mapperLocations" value="classpath:/queries/**/*.xml" />
+    </bean>
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+        <constructor-arg ref="sqlSessionFactory"></constructor-arg>
+    </bean>
+
+	<!--  -->
+    <!-- datasource -->
+	<!--  -->
+	<bean id="dataSource" class="net.sf.log4jdbc.sql.jdbcapi.DataSourceSpy">
+		<constructor-arg ref="dataSourceSpied" />
+	</bean>
+	<bean id="dataSourceSpied" class="org.apache.ibatis.datasource.pooled.PooledDataSource" >
+        <property name="driver" value="${db.driver}"></property>
+        <property name="url" value="${db.url}"></property>
+        <property name="username" value="${db.username}"></property>
+        <property name="password" value="${db.password}"></property>
+
+        <property name="poolMaximumActiveConnections" value="20"/>
+        <property name="poolMaximumIdleConnections" value="20"/>
+        <property name="poolMaximumCheckoutTime" value="20000"/>
+        <property name="poolPingEnabled" value="true"/>
+        <property name="poolPingQuery" value="select 1"/>
+        <property name="poolPingConnectionsNotUsedFor" value="43200"/>
+        <property name="poolTimeToWait" value="30000"/>
+    </bean>
+
+	<!--  -->
+    <!-- etc -->
+	<!--  -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		<property name="maxUploadSize" value="30720000" /> <!-- 30MB -->
+	</bean>
 </beans>
