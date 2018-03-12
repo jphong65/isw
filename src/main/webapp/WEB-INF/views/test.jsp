@@ -9,9 +9,14 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
 <script type="text/javascript" src="resources/js/bootstrap.min.js">
 </script>
-<title>Insert title here</title>
+<title>수행프로젝트관리</title>
 </head>
+
 <body>
+<div class="page-header">
+  <h1>수행프로젝트 관리</h1>
+</div>
+
 <div class="container">
 <div class="row">
 	<div class="col-md-6">테스트1</div>
@@ -19,4 +24,5 @@
 </div>
 </div>
 </body>
+
 </html>
