@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 30초마다 설정 파일의 변경을 확인한다. 파일이 변경되면 다시 로딩한다 -->
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+	<!-- ###### properties ###### -->
+	<!-- eclipse기준 로그파일 위치: run connfig.. -> tomcat... -> arguments에서 catalina.home -->
+	<property name="LOG_FILE_NAME" value="${catalina.home}/logs/ondongne-gis.log" />
+	<property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+	<property name="PROJECT_BASE_PACKAGE" value="com.foodtech" />
+
+	<!-- ###### appeder ###### -->
+	<!--  console -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				${LOG_PATTERN}
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!--  file -->
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_FILE_NAME}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_FILE_NAME}.%i</fileNamePattern>
+			<minIndex>0</minIndex>
+			<maxIndex>10</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!--
+		###### loggers ######
+		trace	debug	info	warn	error	off
+	-->
+	<!--
+	1. root
+	-->
+	<root level="error">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+
+	<!--
+	2. project package
+	-->
+<!-- 	<logger name="${PROJECT_BASE_PACKAGE}" level="info" additivity="false" > -->
+	<logger name="${PROJECT_BASE_PACKAGE}" level="debug" additivity="false" >
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+
+	<!--
+	3. third party dependencies
+	-->
+	<!-- transaction -->
+	<logger name="org.springframework.jdbc.datasource" level="error"  additivity="false">
+		<appender-ref ref="console" />
+	</logger>
+
+	<!-- Query Loggers -->
+	<logger name="jdbc.sqlonly"  level="error"  additivity="false">
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="jdbc.resultsettable"  level="error"  additivity="false">
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="jdbc.audit"  level="error"  additivity="false">
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="jdbc.resultset"  level="error"  additivity="false">
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="jdbc.sqltiming"  level="error"  additivity="false">
+		<appender-ref ref="console" />
+	</logger>
+
+
+</configuration>
