@@ -142,12 +142,12 @@
 			obj.data = {};
 			
 			/* 메뉴조회 */
-			ISWF.ajax(obj, function(result, req) {
+			/*ISWF.ajax(obj, function(result, req) {
 				
-				/* 상단/좌측 메뉴 그리기 */
+				 상단/좌측 메뉴 그리기 
 				drawMenuList(result);
 				
-				/* 탭 변경시 */
+				 탭 변경시 
 				$('.iswf-tab-button').click(function() {
 					
 					ISWF.gridValid(function() {
@@ -166,7 +166,7 @@
 					});
 				});
 				
-				/* 첫번째 탭만 활성화 */
+				 첫번째 탭만 활성화 
 				$('.iswf-tab').hide();
 				$('.iswf-tab').eq(0).show();
 				
@@ -189,8 +189,10 @@
 				callback(commonParam);
 				
 				
-			})
-			
+			})*/
+			// 공통 코드 로딩
+			var commonParam = {};
+			callback(commonParam);
 			
 			
 		};
