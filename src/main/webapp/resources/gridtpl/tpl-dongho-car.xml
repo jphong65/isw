@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<grid id='dongho-car' desc='입주차량 데이터 그리드'>
+
+	<var name='action-list'	 value='/donghomember/carList' /> 	<!-- 데이터 조회 액션 URI -->
+	
+	<meta>
+		
+		<readony 		value="N" /> 				<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="Y" label='삭제' />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 		value="Y" />					<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />					<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 		value="Y" />					<!-- 로우 삽입가능 여부 -->
+		<appendable 		value="Y" />					<!-- 로우 추가가능 여부 -->
+		<deletable	 	value="Y" />					<!-- 로우 삭제 가능 여부 -->
+	</meta>
+	
+	<column field='name' name='지역번호' type='char' width='50' />
+	<column field='huhldYn' name='번호' type='char' width='60' />
+	<column field='birthYmd' name='차종' type='date' width='80' />
+	<column field='sex' name='등록자' type='char' width='50' />
+	<column field='famlyRelt' name='연락처' type='char' width='50' />
+	<column field='cpNo' name='주차금액' type='char' width='100' />
+	<column field='hpNo' name='차량등록일' type='area' width='100' />
+	<column field='emailAddr' name='해지일' type='email' width='150' />
+	<column field='addr' name='스티커발급일' type='char' width='180' />
+	<column field='rmk' name='차량등록증' type='char' width='200' />
+	<column field='rmk' name='신분증' type='char' width='200' />
+	<column field='rmk' name='가족관계증명서' type='char' width='200' />
+	<column field='rmk' name='비고' type='char' width='200' />
+	                                        
+</grid>

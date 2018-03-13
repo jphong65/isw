@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<grid id='dongho-grid' desc='동.호 데이터 그리드'>
+	<meta>
+		<readony 		value="N" /> 	<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="Y" />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 		value="Y" />		<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />		<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 		value="Y" />					<!-- 로우 삽입가능 여부 -->
+		<appendable 		value="Y" />					<!-- 로우 추가가능 여부 -->
+		<deletable	 	value="Y" />					<!-- 로우 삭제 가능 여부 -->
+		
+		<gridfitStyle   value="evenFill" />    <!-- 그리드 자동 맞춤 설정 -->		
+		<showHeaderSum   value="N" />    <!-- 헤더영역 합계표시 여부 -->
+		<showFooter      value="Y" />    <!-- footer영역 여부 -->
+		<setSort         value="exclusive" />     <!-- 그리드 정렬 방식  기본값:none,  exclusive: 클릭한 컬럼, incusive: 클릭순으로 멀티 , revers: 마지막 클릭순으로 멀티    -->
+		<showStateBar    value="Y" />    <!-- 그리드 상태표시 여부 기본값:Y -->
+	</meta>
+	<!-- textAlignment : near:기본(좌측정렬), center:중앙정렬, far:우측정렬  -->
+	<!-- <column field='compxCd' name='단지코드' type='char' width='100'/> -->
+	
+	<column field='dongNo' name='동' type='char' width='80' textAlignment='center' maxLength='3'/>
+	<column field='hoNo' name='호실' type='char' width='80' textAlignment='center'/>
+	<column field='exsueArea' name='전용면적' type='number' width='80' textAlignment='far'/>
+	<column field='cmuseArea' name='공용면적' type='number' width='80' textAlignment='far'/>
+	<column field='parkArea' name='주차면적' type='number' width='80' textAlignment='far'/>
+	<column field='supArea' name='공급면적' type='number' width='80' textAlignment='far'/>
+	<column field='etcCmuseArea' name='기타공용면적' type='number' width='110' textAlignment='far'/>
+	<column field='roomCnt' name='방수' type='number' width='50' textAlignment='far'/>
+	<column field='toiletCnt' name='화장실수' type='number' width='70' textAlignment='far'/>
+	<column field='roomTp' name='유형(TYPE)' type='char' width='100' textAlignment='center'/>
+	<column field='terceYn' name='테라스유무' type='combo' width='100' textAlignment='center'/>
+	<column field='leasDpstAmt' name='임대보증금' type='money' width='100' textAlignment='far'/>
+	<column field='premmAmt' name='권리금' type='money' width='100' textAlignment='far'/>
+	<column field='rentAmt' name='임대료' type='money' width='100' textAlignment='far'/>
+	<column field='useYn' name='사용여부' type='combo' width='80' textAlignment='center'/>
+	<column field='rmk' name='비고' type='char' width='150' textAlignment='center'/>  
+	
+</grid>

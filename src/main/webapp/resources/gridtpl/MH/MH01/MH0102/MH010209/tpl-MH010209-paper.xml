@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<grid id='paperGrid' desc='입주서류정보'>
+<var name='action-list'	 value='/mh010209/mvih_paper_search' />
+	<meta>
+		<readony 		value="N" /> 		<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="N" />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 	value="Y" />		<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />		<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 	value="N" />		<!-- 로우 삽입가능 여부 -->
+		<appendable 	value="N" />		<!-- 로우 추가가능 여부 -->		
+		<deletable	 	value="N" />		<!-- 로우 삭제 가능 여부 -->
+		<rollbackable	value="N" />        <!-- 로우 복구 가능 여부 -->			
+		<gridfitStyle   value="evenFill" /> <!-- 그리드 자동 맞춤 설정 -->		
+		<showHeaderSum  value="N" />   		<!-- 헤더영역 합계표시 여부 -->
+		<showFooter     value="N" />   		<!-- footer영역 여부 -->
+		<setSort        value="" />     	<!-- 그리드 정렬 방식  기본값:none,  exclusive: 클릭한 컬럼, incusive: 클릭순으로 멀티 , revers: 마지막 클릭순으로 멀티    -->
+		<showStateBar   value="N" />    	<!-- 그리드 상태표시 여부 기본값:Y -->
+	</meta>
+	
+	<column field='paperNm' name='서류명' type='char' textAlignment='center' readonly='Y' background='#dddddd'/>
+	<column field='mngCnt' name='관리부수' type='char' textAlignment='center' readonly='Y' background='#dddddd'/>
+	<column field='statusYn' name='확인여부' type='combo' textAlignment='center' />
+	<column field='paperImg' name='이미지' type='char' textAlignment='center'/>
+	<column field='compxCd' name='단지코드' type='char' textAlignment='center' visible='N'/>
+	<column field='dongNo' name='동' type='number' textAlignment='center' visible='N'/>
+	<column field='hoNo' name='호실' type='number' textAlignment='center' visible='N'/>
+	<column field='conttNo' name='계약번호' type='char' textAlignment='center' visible='N'/>
+	<column field='knd' name='구분' type='char' textAlignment='center' visible='N'/>
+	<column field='paperCd' name='서류코드' type='char' textAlignment='center' visible='N'/>
+	<column field='finStatusYn' name='최종확인' type='char' textAlignment='center' visible='N'/>
+	
+</grid>

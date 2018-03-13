@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<grid id='dongho-card' desc='입주 카드 데이터 그리드'>
+
+	<var name='action-list'	 value='/donghomember/cardList' /> 	<!-- 데이터 조회 액션 URI -->
+	
+	<meta>
+		
+		<readony 		value="N" /> 				<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="Y" label='삭제' />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 		value="Y" />					<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />					<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 		value="Y" />					<!-- 로우 삽입가능 여부 -->
+		<appendable 		value="Y" />					<!-- 로우 추가가능 여부 -->
+		<deletable	 	value="Y" />					<!-- 로우 삭제 가능 여부 -->
+	</meta>
+	
+	<column field='name' name='카드번호' type='char' width='150' />
+	<column field='huhldYn' name='발급일자' type='char' width='160' />
+	<column field='birthYmd' name='비고' type='date' width='200' />
+	                                        
+</grid>

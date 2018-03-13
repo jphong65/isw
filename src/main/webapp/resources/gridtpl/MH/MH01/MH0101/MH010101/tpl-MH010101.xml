@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<grid id='compx' desc='동.호 데이터 그리드'>
+	<meta>
+		<readony 		value="N" />       <!-- 읽기 전용여부 -->
+		<showCheckbox 	value="N" />       <!-- 좌측 체크박스 표시여부 -->
+		<showNumber 	value="Y" />       <!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />       <!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 	value="Y" />       <!-- 로우 삽입가능 여부 -->
+		<appendable 	value="N" />       <!-- 로우 추가가능 여부 -->
+		<deletable	 	value="N" />       <!-- 로우 삭제 가능 여부 -->
+		<rollbackable   value="N" />       <!-- 로우 복원 가능 여부 -->
+		
+		<!-- 그리드 자동 맞춤 설정 
+		 * none   -조정없음 (기본값)
+         * even - 표시할 컬럼들의 전체 너비가 그리드 너비보다 작은 경우 남는 크기를 각 컬럼에 고르게 분배
+         * evenFill -컬럼의 width를 이용해 그리드 너비에 맞게 컬럼 비율에 맞춰 늘리거나 축소
+         * fill - 컬럼의 width와 fillWidth를 이용해 채운다. fillWidth가 전혀 선택되지 않았다면 “even”과 동일
+		-->
+		<gridfitStyle   value="evenFill" />       
+		<showHeaderSum   value="N" />    <!-- 헤더영역 합계표시 여부 -->
+		<showFooter      value="N" />    <!-- footer영역 여부 -->
+		<setSort         value="" />     <!-- 그리드 정렬 방식  기본값:none,  exclusive: 클릭한 컬럼, incusive: 클릭순으로 멀티 , revers: 마지막 클릭순으로 멀티    -->
+		<showStateBar    value="N" />    <!-- 그리드 상태표시 여부 기본값:Y -->
+		
+		
+	</meta>
+	<!-- textAlignment : near:기본(좌측정렬), center:중앙정렬, far:우측정렬  -->
+	<column field='compxNm' name='단지명' type='char' width='100' readonly='Y' textAlignment='center' />
+	<column field='compxCd' name='단지코드' type='char' width='150' readonly='Y' textAlignment='center' />
+	<column field='excutNm' name='대표자' type='char' width='150' readonly='Y' textAlignment='center' />
+	<column field='useYnNm' name='사용여부' type='char' width='150' readonly='Y' textAlignment='center' />
+	
+</grid>

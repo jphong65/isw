@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<grid id='dongho' desc='동.호 데이터 그리드'>
+	<meta>
+		<readony 		value="Y" /> 	<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="N" />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 		value="Y" />		<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />		<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 		value="N" />					<!-- 로우 삽입가능 여부 -->
+		<appendable 		value="N" />					<!-- 로우 추가가능 여부 -->
+		<deletable	 	value="N" />					<!-- 로우 삭제 가능 여부 -->
+	</meta>
+	
+	<column field='dongNo' name='동' type='number' />
+	<column field='hoNo' name='호실' type='number' />
+	<column field='mvihEstYmd' name='입주예정일' type='date' />
+	<column field='??' name='계약번호' type='char' />
+	<column field='???' name='계약자성명' type='char' />
+	<column field='????' name='연락처' type='char' />
+	<column field='exsueArea' name='전용면적' type='area' />
+	<column field='cmuseArea' name='분양면적' type='area' />
+	<column field='leasDpstAmt' name='임대보증금' type='money' />
+	<column field='premmAmt' name='권리금' type='money' />
+	<column field='rentAmt' name='임대료' type='money' />
+	
+</grid>
