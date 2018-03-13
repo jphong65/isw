@@ -13,7 +13,7 @@
 
  	<typeAliases> 	
  		<typeAlias type="com.isw.isw.test.vo.TestVO" alias="test"/>
- 	</typeAliases>
+ 		<typeAlias type="com.isw.isw.pb.pb090w.vo.Pb090wVo" alias="Pb090wVo"/> 	</typeAliases>
  		
     
 </configuration>
