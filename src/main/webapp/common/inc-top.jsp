@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">OnDongne</a>
+            <a class="navbar-brand" href="#">iSmartWork</a>
         </div>
 		<ul class="nav navbar-nav" id="topMenu" style="margin-left:120px;">
 			

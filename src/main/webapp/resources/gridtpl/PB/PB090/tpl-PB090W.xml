@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<grid id='pb090wGrid' desc='수행프로젝트관리 '>
+	<meta>
+		<readony 		value="N" /> 		<!-- 읽기 전용여부 -->
+		<showCheckbox 	value="N" />		<!-- 좌측 체크박스 표시여부 -->
+		<showNumber 	value="Y" />		<!-- 좌측 번호컬럼 표시여부 -->
+		<rowSelection 	value="Y" />		<!-- 클릭시 전체 로우 선택여부 -->
+		<insertable 	value="Y" />		<!-- 로우 삽입가능 여부 -->
+		<appendable 	value="Y" />		<!-- 로우 추가가능 여부 -->		
+		<deletable	 	value="Y" />		<!-- 로우 삭제 가능 여부 -->		
+		<gridfitStyle   value="evenFill" /> <!-- 그리드 자동 맞춤 설정 -->		
+		<showHeaderSum  value="N" />   		<!-- 헤더영역 합계표시 여부 -->
+		<showFooter     value="N" />   		<!-- footer영역 여부 -->
+		<setSort        value="exclusive" />     	<!-- 그리드 정렬 방식  기본값:none,  exclusive: 클릭한 컬럼, incusive: 클릭순으로 멀티 , revers: 마지막 클릭순으로 멀티    -->
+		<showStateBar   value="N" />    	<!-- 그리드 상태표시 여부 기본값:Y -->
+	</meta>
+
+	<column field='bizHq' name='사업본부' type='char' textAlignment='center'/>
+	<column field='prjCd' name='프로젝트코드' type='char' textAlignment='center'/>
+	<column field='prjNm' name='프로젝트명' type='char' textAlignment='center'/>
+	<column field='strDt' name='시작일자' type='date' textAlignment='center'/>
+	<column field='endDt' name='종료일자' type='date' textAlignment='center'/>
+	<column field='cstNm' name='고객사명' type='char' textAlignment='center'/>
+	<column field='slsTy' name='매출유형' type='char' textAlignment='center'/>
+	<column field='dtlSlsTy' name='세부매출유형' type='char' textAlignment='center'/>
+	<column field='addTaxGb' name='부가세구분' type='char' textAlignment='center'/>
+<!--	
+	<column field='dongNo' name='동' type='number' textAlignment='center'/>
+	<column field='hoNo' name='호실' type='number' textAlignment='center'/>
+ 	<column field='mvihYmd' name='입주일' type='date' textAlignment='center'/>
+	<column field='keyOutsrYmd' name='키불출일' type='date' textAlignment='center'/>
+	<column field='name' name='세대주' type='char' textAlignment='near'/>
+	<column field='cpNo' name='연락처' type='phone' textAlignment='center'/>
+	<column field='exsueArea' name='전용면적' type='number' textAlignment='far'/>
+	<column field='supArea' name='분양면적' type='number' textAlignment='far'/>
+	<column field='chkPaparNmb' name='확인서류건수' type='number' textAlignment='center'/>
+	<column field='noSubmNmb' name='미제출건수' type='number' textAlignment='center'/>
+	<column field='chkItemNmb' name='점검항목건수' type='number' textAlignment='center'/>
+	<column field='goodNmb' name='양호건수' type='number' textAlignment='center'/>
+	<column field='badNmb' name='불량건수' type='number' textAlignment='center'/>
+	<column field='rprHpNmb' name='보수희망건수' type='number' textAlignment='center'/>
+	<column field='conttNo' name='계약번호' type='char' textAlignment='center' visible='N'/>
+	<column field='compxCd' name='단지코드' type='char' textAlignment='center' visible='N'/>	 -->
+	
+	
+</grid>

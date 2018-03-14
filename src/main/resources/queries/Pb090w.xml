@@ -2,7 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pb090w">
 
-<select id="Pb090w_001" resultType="Pb090wVo">
-select * from test_01
+<select id="Pb090w_list" resultType="Pb090wVo">
+select * from TPB002
+ where 1=1
+	<if test="bizHq != null and bizHq != ''">
+   and biz_hq= #{bizHq} 
+	</if>		
+	<if test="prjNm != null and prjNm != ''">
+   and prj_nm like concat('%',#{prjNm},'%')  
+	</if>		
+	<if test="strDt != null and strDt != ''">
+   and str_dt= #{strDt} 
+	</if>		
+	<if test="endDt != null and endDt != ''">
+   and end_dt= #{endDt} 
+	</if>		
+	<if test="cstNm != null and cstNm != ''">
+   and cst_nm like concat('%',#{cstNm},'%')  
+	</if>		
 </select>
+
+
 </mapper>

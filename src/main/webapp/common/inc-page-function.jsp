@@ -1,5 +1,5 @@
 <%@page import="java.util.Arrays"%>
-<%@page import="com.ondongne.common.utils.OndongneUtils"%>
+<%@page import="com.isw.common.utils.IswUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
@@ -25,12 +25,12 @@ String[] conditionArr = conditions.split("[|]");
 </div>
 
 <!-- 검색 -->
-<div class="search-wrapper">
+<%-- <div class="search-wrapper">
     <input type="file" name="excelFile" id="xlf" style="display:none" >
      <form class="form-horizontal clearfix" id="searchForm" name="searchForm">
-     	<%=OndongneUtils.getConditionHTML(conditionArr) %>
+     	<%=IswUtils.getConditionHTML(conditionArr) %>
      </form>
-</div>
+</div> --%>
 
 <script>
 
@@ -133,7 +133,7 @@ function drawMenuList(result) {
 
 function changeSaveBtnSts() {
 	
-	if( ODNF.isGridsChanged() ) {
+	if( ISWF.isGridsChanged() ) {
 		//$('.btn-sm').eq(1).addClass('btn-primary');
 		$('#topbtn-save').addClass('btn-primary');
 	} else {
@@ -274,61 +274,29 @@ function changeSaveBtnSts() {
 	$("#dongNo").change(function(){
 		bindHoOptions($(this).val())
 	});
+
+/* (function($, ODNF){
 	
-(function($, ODNF){
 	
-	
-	/* 조회 버튼 클릭 */
+	// 조회 버튼 클릭 
 	$('#topbtn-search').click(function() {
 		var conditions = $('#searchForm').serialize();
 		ODNF.search(conditions);
+	}); */
+			
+(function($, ISWF){
+	
+	
+	/* 조회 버튼 클릭 */
+	$('#iswbtn-search').click(function() {
+		/* var conditions = $('#searchForm').serialize(); 
+		ISWF.search(conditions); */ 
+		alert("클릭됨")
+		ISWF.search();
 	});
 	
-	
-	/* 저장 버튼 클릭 */
-	$('#topbtn-save').click(function() {			
-		
-		if( $(this).hasClass('btn-primary') ) {
-			
-			// 각 화면 그리드 상태 강제 변경 필요할시 함수 호출 */
-			if( ODNF.setStates ) {
-			    ODNF.setStates();
-			}
-			
-			var data = {};
-			for( var key in targetGrids ) {
-				var targetGrid = targetGrids[key];
-				targetGrid.gridView.commit();
-				var changedData = targetGrid.getChangedData();
-				if( !ODNF.Object.isEmpty( changedData ) ) {
-					data[targetGrid.gridView.id] = changedData; 
-				}
-				
-			}
-			/*각 화면의 공통 저장 밸리데이션 함수 호출*/
-			if( ODNF.saveValidate ) {
-				if(!ODNF.saveValidate()) return;	
-			}
-			
-			
-			if( confirm("변경 내역을 적용하시겠습니까?") ) {
-				ODNF.save(data);	
-			}
-			
-		}
-	});
-	
-	/* 삭제 버튼 클릭 */
-    $('#topbtn-delete').click(function() {
-        ODNF.del();
-    });
-	
-    /* 엑셀 up 버튼 클릭 */
-    $('#topbtn-excelUp').click(function() {
-    	$("#xlf").click();
-    });
-	
-})(jQuery, ODNF);
+})(jQuery, ISWF);	
+
 
 <%
 /* 단지코드 검색조건이 있다면 해당 조건 추가 쿼리 실행 */

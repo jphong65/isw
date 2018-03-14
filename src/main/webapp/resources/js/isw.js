@@ -1721,6 +1721,7 @@
 		 *          data ){ //성공 처리 } ,function( data ){ //실패 처리 } );
 		 */
         _ISWF.ajax = function(obj, sFn, eFn){
+        	
 			var _url 		= obj.url || '';
 			var _type 		= obj.type || 'GET';
 			var _dataType 	= obj.dataType || 'text';
@@ -1732,7 +1733,7 @@
 				  Accept: '*/*'
 				,'Content-Type': 'application/json'
 			};
-			
+			alert(_url+_data)
 			var request = $.ajax({
 				headers:	_headers
 				,url: 		_url
